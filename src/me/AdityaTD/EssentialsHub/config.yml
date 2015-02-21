@@ -1,0 +1,19 @@
+# ======================================
+#             EssentialsHub+
+#           Plugin By: AdityaTD
+#        YouTube: bit.ly/ATDYouTube
+# ======================================
+
+# JoinMOTD1, JoinMOTD2, JoinMOTD3 & JoinMOTD4 are Messages sen't to any player who joins the Server!
+# %player% would be replaced by the Player Name!
+
+JoinMOTD1: '&e&m----------------------------------------'
+JoinMOTD2: '&aWelcome %player% to ServerName%'
+JoinMOTD3: '&bHope you have fun playing!'
+JoinMOTD4: '&e&m----------------------------------------'
+
+
+# JoinShout is message broadcasted to all the players on the Hub.
+# It has permission node: "msg.joinshout" so only people with that permission can have the Broadcast.
+
+JoinShout: '&bWelcome &%player% &bto &aServerName'
