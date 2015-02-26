@@ -16,15 +16,15 @@ public class Main extends JavaPlugin implements Listener {
 	
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event){
-		Player p = event.getPlayer();
-		p.sendMessage(Main.this.getConfig().getString("JoinMOTD1").replaceAll("&", "\u00A7").replaceAll("%player%", event.getPlayer().getName()));
-		p.sendMessage(Main.this.getConfig().getString("JoinMOTD2").replaceAll("&", "\u00A7").replaceAll("%player%", event.getPlayer().getName()));
-		p.sendMessage(Main.this.getConfig().getString("JoinMOTD3").replaceAll("&", "\u00A7").replaceAll("%player%", event.getPlayer().getName()));
-		p.sendMessage(Main.this.getConfig().getString("JoinMOTD4").replaceAll("&", "\u00A7").replaceAll("%player%", event.getPlayer().getName()));
-		
 		event.setJoinMessage(null);
-		if (event.getPlayer().hasPermission("msg.joinshout")){
-			Bukkit.broadcastMessage(Main.this.getConfig().getString("JoinShout").replaceAll("&", "\u00A7").replaceAll("%player%", event.getPlayer().getName()));
+		Player p = event.getPlayer();
+		p.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("JoinMOTD1")).replaceAll("%player%", event.getPlayer().getName()));
+		p.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("JoinMOTD2")).replaceAll("%player%", event.getPlayer().getName()));
+		p.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("JoinMOTD3")).replaceAll("%player%", event.getPlayer().getName()));
+		p.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("JoinMOTD4")).replaceAll("%player%", event.getPlayer().getName()));
+		
+		if (p.hasPermission("msg.joinshout")){
+			Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("JoinShout")).replaceAll("%player%", event.getPlayer().getName()));
 		}
 	}
 	
